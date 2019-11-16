@@ -1,7 +1,9 @@
 # txerriboard
-Web based dashboard
+Homepage mixing some interesting tools i merged from other authors (see below).
 
-Personal mix of some useful tools i took from other authors.
+- <a href="https://github.com/shreydan/GooglePage">GooglePage, it redirects to useful Google sites.
+- <a href="https://github.com/LLNL/Task-Time-Tracker">Task-Time-Tracker</a>, time tracking tool.
+- <a href="https://github.com/LLNL/Task-Time-Tracker">Task-Time-Tracker</a>, white noise generator.
+- <a href="https://github.com/LLNL/Task-Time-Tracker">Task-Time-Tracker</a>, note taking tool, local storage.
 
-- GooglePage, it redirects to useful Google sites.
-- Task-Time-Tracker
+
