@@ -1,5 +1,5 @@
 # TxerriBoard
-Homepage mixing some interesting tools i merged from other authors (see below).
+Homepage made from some interesting tools i merged from other authors (see below).
 
 - <a href="https://github.com/shreydan/GooglePage">GooglePage</a>, it redirects to useful Google sites.
 - <a href="https://github.com/LLNL/Task-Time-Tracker">Task-Time-Tracker</a>, task list with time tracking tool.
