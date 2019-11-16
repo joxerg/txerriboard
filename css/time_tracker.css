@@ -1,0 +1,217 @@
+/*****************************************************************************\
+ *  Copyright (C) 2014 Lawrence Livermore National Security, LLC.
+ *  Produced at Lawrence Livermore National Laboratory (cf, DISCLAIMER).
+ *  Written by Geoff Cleary <gcleary@llnl.gov>
+ *  LLNL-CODE-642434
+ *
+ *  This file is part of Task Time Tracker, a client-side web app that allows
+ *  you to track time spent on arbitrary tasks.
+ *  For details, see <https://bitbucket.org/gcleary/time-tracker/wiki/Home>.
+ *
+ *  Task Time Tracker is free software; you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by the
+ *  Free Software Foundation; either version 2 of the License, or (at your
+ *  option) any later version.
+ *
+ *  Task Time Tracker is distributed in the hope that it will be useful, but
+ *  WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+ *  or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
+ *  for more details.
+ *
+ *  You should have received a copy of the GNU General Public License along
+ *  with Task Time Tracker.  If not, see <http://www.gnu.org/licenses/> or
+ *  write to
+ *      Free Software Foundation, Inc.,
+ *      59 Temple Place, Suite 330,
+ *      Boston, MA 02111-1307 USA
+\*****************************************************************************/
+
+@font-face {
+    font-family: Roboto;
+    font-weight: 200;
+    font-style: normal;
+    src: url('font/Roboto-ExtraLight.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: fontello;
+  src: url('font/fontello/fontello.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+form {
+    text-align: center;
+    padding-top: 5px;
+}
+
+#AddTaskButton {
+    border: 1px solid #a0a0a0;
+    font-size: medium;
+    font-family: fontello, sans-serif;
+    line-height: 40px;
+    height: 40px;
+    width: 40px;
+    margin: -3px;
+    padding: 0px;
+    vertical-align: middle;
+}
+
+#TrackTimeButton {
+    border: 1px solid #a0a0a0;
+    border-radius: 0px 4px 4px 0px;
+    font-size: medium;
+    font-family: fontello, sans-serif;
+    line-height: 40px;
+    height: 40px;
+    width: 40px;
+    margin: -3px;
+    padding: 0px;
+    vertical-align: middle;
+}
+
+#AddTaskButton:before {
+    content: '\e801';
+    font-size: large;
+    color: #505050;
+}
+
+#TrackTimeButton:before {
+    content: '\e800';
+    font-size: x-large;
+    color: #505050;
+}
+
+#AddTaskButton:hover:before {
+    content: '\e801';
+    font-size: large;
+    color: black;
+}
+
+#TrackTimeButton:hover:before {
+    content: '\e800';
+    font-size: x-large;
+    color: black;
+}
+
+
+#Plus {
+    height: 30px;
+    margin-top: 4px;
+}
+
+#Clock {
+    height: 35px;
+    margin-top: 2px;
+}
+
+#TaskList {
+   display: -webkit-box;   /* OLD: Safari 6.0, iOS 6, Android browser, older WebKit browsers. */
+   display: -ms-flexbox;   /* MID: IE 10                                                */
+   display: -webkit-flex;  /* NEW: Chrome 21+, Safari 6.1+, iOS 7                       */
+   display: flex;          /* NEW: Opera 12.1, Firefox 22+                              */
+
+   -webkit-box-orient: horizontal;
+   -ms-flex-direction: row;
+   -webkit-flex-direction: row;
+   flex-direction: row;
+
+   -webkit-box-align: left;
+   -ms-flex-align: left;
+   -webkit-align-items: left;
+   align-items: left;
+
+   -webkit-box-pack: left;
+   -ms-flex-pack: left; 
+   -webkit-justify-content: left;
+   justify-content: left;
+}
+
+.main_task_div {
+    cursor: pointer;
+    position: relative;
+	margin: 4px;
+}
+
+#Form_TaskName {
+ border: 1px solid black;
+ font-family: 'Roboto', sans-serif;
+
+}
+
+.close_task_div_inactive {
+    background: #a0a0a0;
+    border-radius: 0px;
+    color: #e4e4e4;
+    width: 15px;
+    height: 13px;
+    line-height: 13px;
+    font-family: Roboto, sans-serif;
+    font-size: small;
+    text-align: center;
+    padding: 0px 0px 2px 0px;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+}
+
+.close_task_div_active {
+    background: #ffffff;
+    border-radius: 0px;
+    color: #DC143C;
+    width: 15px;
+    height: 13px;
+    line-height: 13px;
+    font-family: Roboto, sans-serif;
+    font-size: small;
+    text-align: center;
+    padding: 0px 0px 2px 0px;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+}
+
+#top_drop
+{
+    padding-top: 10px;
+    width: 250px;
+}
+
+.drop_target {
+    height: 5px;
+    transition: all 100ms ease;
+}
+
+.active_drop_target {
+    height: 30px;
+    transition: all 100ms ease;
+}
+
+.task_div { 
+    border-radius: 0px;
+    font-family: Roboto, sans-serif;
+    font-size: 1.2vw;
+    line-height: 1.1;
+    padding: 8px;
+    text-align: center;
+}
+
+.task_current {
+    width: auto;
+    background: #DC143C;
+}
+
+.task_current_mouseover {
+    width: auto;
+    background: #DC143C;
+}
+
+.task_mouseover {
+    width: auto;
+    background: #e4e4e4;
+}
+
+.task_inactive {
+    width: auto;
+    background: #e4e4e4;
+}

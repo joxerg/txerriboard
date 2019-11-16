@@ -1,0 +1,154 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>TxerriBoard</title>
+    <link rel="stylesheet" type="text/css" href="css/home.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
+    <link rel="shortcut icon" href="notak.ico" />
+	 <script src="js/all.min.js" defer></script>
+    <script src="js/pep.min.js" defer></script>
+<style>
+	html, body{
+		width: 100%;
+		height: 100%;
+		border: 0;
+		margin: 0;
+	}
+	textarea{
+		width: 100vw;
+    	height: 100vh;
+		background-color: white;
+		color: black;
+		box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+		font-size:0.8rem;
+		padding:4rem;
+		line-height:1.4;
+		border: none;
+		display: flex;
+    	align-items: center;
+    	justify-content: center;
+    	font-family: Roboto,Monaco,Lucida Console;
+	}
+	textarea:focus{
+    	outline: 0;
+	}
+	cursor: crosshair;
+	</style>
+	<link rel="stylesheet" href="css/time_tracker.css">
+        <script src="js/jquery-2.0.3.js"></script>
+        <script src="js/time_tracker.js"></script>
+</head>
+	<body>
+	
+	<div id="webpage">
+
+        <div id="menuholder">
+			<form id="TaskForm">
+			 <input id="Form_TaskName" title="zozer idatzi ta sakatu enter!!" type="text" placeholder="" />
+            <input id="StartTimer" type="hidden" />
+			</form>
+			
+            <button class="menu" onclick="webmode();">bilatu</button>
+			
+			<button class="menu" onclick="baimode();">zorte on!</button>
+
+            <button class="menu" onclick="imgmode();">irudiak</button>
+
+            <button class="menu" onclick="ytmode();">youtube</button>
+			
+			<button class="menu" onclick="famode();">film affinity</button>
+            
+            <a target="_blank" class="menu" href="https://www.google.com/maps">mapak</a>
+
+            <a target="_blank" class="menu" href="https://drive.google.com">drive</a>
+
+            <a target="_blank" class="menu" href="https://www.google.com/calendar">calendar</a>
+
+            <a target="_blank" class="menu" href="https://mail.google.com">gmail</a>
+           
+        
+        
+        </div>
+		<input id="srch" name="searchbox" type="text" autocomplete="off" maxlength="255" placeholder="hepa! zer moduz?!" onkeydown="return openurl(event);" autofocus/>
+    </div>
+	<script src="js/control.js"></script>
+	<div id="TaskList">
+            <div id="top_drop" class="drop_target"></div>
+        </div>
+		
+		
+		  <header class="header">
+      
+      <nav class="header__menu js-menu">
+        <!-- sound -->
+        <div class="options__option">
+         
+     
+        </div>
+      </nav>
+      <div class="header__burger js-burger"></div>
+    </header>
+		<div class="wrap">
+      <form id="options" class="options js-options" onsubmit="return false;">
+        <!-- volume -->
+        <div class="options__option">
+		<input id="volume"
+                 class="options__volume js-volume-input"
+                 type="range"
+                 list="volume__ticks"
+                 min="0"
+                 max="1"
+                 step="0.01"
+                 value="0"
+                 oninput="vout.value = Math.round(volume.value * 100);">
+      </div>
+        <button class="options__play js-play">eman</button>
+      </form>
+    </div>
+	
+<textarea id="textarea" oninput="savedata();" autofocus spellcheck="false"></textarea>
+
+	<script>
+	function loaddata(){
+		if(window.localStorage["data"]){
+			document.getElementById("textarea").value = window.localStorage["data"];
+		}
+	}
+	function savedata(){
+		window.localStorage["data"] = document.getElementById("textarea").value;
+	}
+
+	document.getElementById('textarea').onkeydown = function(e){
+		if (e.keyCode == 9) {
+			insertAtCursor('    ');
+			return false;
+		}
+	}
+
+	function insertAtCursor(myValue) {
+		myField = document.getElementById("textarea");
+	    //IE support
+	    if (document.selection) {
+	        myField.focus();
+	        sel = document.selection.createRange();
+	        sel.text = myValue;
+	    }
+	    //MOZILLA and others
+	    else if (myField.selectionStart || myField.selectionStart == '0') {
+	        var startPos = myField.selectionStart;
+	        var endPos = myField.selectionEnd;
+	        myField.value = myField.value.substring(0, startPos)
+	            + myValue
+	            + myField.value.substring(endPos, myField.value.length);
+	        myField.selectionStart = startPos + myValue.length;
+	        myField.selectionEnd = startPos + myValue.length;
+	    } else {
+	        myField.value += myValue;
+	    }
+	}
+	loaddata();
+	</script>
+</body>
+</html>
