@@ -8,7 +8,7 @@ Homepage mixing some interesting tools i merged from other authors (see below).
 
 # Screenshot
 
-
+<img src="https://github.com/miesismore/txerriboard/blob/master/screenshot.png" alt="TxerriBoard capture">
 
 # Disclaimer
 For sure the code could be cleaned/polished and maybe there are some bugs, so use it at your own risk.
